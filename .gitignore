@@ -6,3 +6,4 @@ README.txt
 THIRD-PARTY-LICENSES.txt
 dynamodb_local_latest.zip
 shared-local-instance.db
+__pycache__/
