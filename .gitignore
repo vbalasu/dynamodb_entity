@@ -1,0 +1,8 @@
+.ipynb_checkpoints/
+DynamoDBLocal.jar
+DynamoDBLocal_lib/
+LICENSE.txt
+README.txt
+THIRD-PARTY-LICENSES.txt
+dynamodb_local_latest.zip
+shared-local-instance.db
