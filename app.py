@@ -2,14 +2,14 @@ from chalice import Chalice
 
 app = Chalice(app_name='dynamodb-links')
 
-import socket
+import socket, os
 host = socket.gethostname()
-if host == 'XGF6JF2F0Q':   # Local development
+if os.environ.get('MODE') == 'PRODUCTION':
+    profile_name = 'vbalasu_admin'  # 'aws-field-eng_databricks-power-user'
+    endpoint_url = None
+else:   # Local development
     profile_name = 'fake'
     endpoint_url = 'http://localhost:8000'
-else:
-    profile_name = None  # 'aws-field-eng_databricks-power-user'
-    endpoint_url = None
 
 def get(id, TableName='items'):
     import boto3
