@@ -77,6 +77,8 @@ class Entity:
                 }
             ],
             BillingMode='PAY_PER_REQUEST')
+        waiter = dynamodb.get_waiter('table_exists')
+        waiter.wait(TableName=self.TableName)
         return True
     def delete_table(self):
         import boto3
@@ -84,6 +86,8 @@ class Entity:
         session = boto3.Session(profile_name=profile_name)
         dynamodb = session.client('dynamodb', endpoint_url=endpoint_url)
         dynamodb.delete_table(TableName=self.TableName)
+        waiter = dynamodb.get_waiter('table_not_exists')
+        waiter.wait(TableName=self.TableName)
         return True
     def put(self, object):
         return put(object, TableName=self.TableName)
