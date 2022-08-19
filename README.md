@@ -2,8 +2,8 @@
 
 [local-dynamodb.ipynb](local-dynamodb.ipynb)
 
-### Link to python app and tests
+### Link to python module and tests
 
-[app.py](app.py)
+[dynamodb_entity.py](dynamodb_entity.py)
 
-[test_app.py](test_app.py)
+[test_dynamodb_entity.py](test_dynamodb_entity.py)
