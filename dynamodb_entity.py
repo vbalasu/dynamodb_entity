@@ -1,7 +1,7 @@
 import os
 
 if os.environ.get('MODE') == 'PRODUCTION':
-    profile_name = 'vbalasu_admin'  # 'aws-field-eng_databricks-power-user'
+    profile_name = 'databricks_lambda'  # 'aws-field-eng_databricks-power-user'
     endpoint_url = None
 else:   # Local development
     profile_name = 'fake'
