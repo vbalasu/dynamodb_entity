@@ -3,7 +3,10 @@ import os, toml
 mode = os.environ.get('APP_MODE')
 with open('app.toml') as f:
     config = toml.load(f)
-endpoint_url = config[mode]['endpoint_url']
+try:
+    endpoint_url = config[mode]['endpoint_url']
+except:
+    endpoint_url = None
 try:
     profile_name = config[mode]['profile_name']
 except:

@@ -50,4 +50,4 @@ def test_config():
         assert entity.profile_name == 'fake'
     elif mode == 'PROD':
         assert entity.profile_name is None
-    
+        assert entity.endpoint_url is None    
