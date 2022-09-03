@@ -1,0 +1,11 @@
+# Switch between environments based on environment variable APP_MODE
+[DEV]
+endpoint_url = 'http://localhost:8000'
+profile_name = 'fake'
+
+[STAGING]
+endpoint_url = 'http://localhost:8000'
+profile_name = 'aws-field-eng_databricks-power-user'
+
+[PROD]
+endpoint_url = 'http://localhost:8000'

@@ -1,11 +1,13 @@
-import os
+import os, toml
 
-if os.environ.get('MODE') == 'PRODUCTION':
-    profile_name = 'databricks_lambda'  # 'aws-field-eng_databricks-power-user'
-    endpoint_url = None
-else:   # Local development
-    profile_name = 'fake'
-    endpoint_url = 'http://localhost:8000'
+mode = os.environ.get('APP_MODE')
+with open('app.toml') as f:
+    config = toml.load(f)
+endpoint_url = config[mode]['endpoint_url']
+try:
+    profile_name = config[mode]['profile_name']
+except:
+    profile_name = None
 
 def get(id, TableName='items'):
     import boto3

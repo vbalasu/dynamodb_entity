@@ -40,3 +40,14 @@ def test_Entity_delete_table():
     temp_to_delete = entity.Entity('temp_to_delete')
     assert temp_to_delete.delete_table() is True
 
+def test_config():
+    import os
+    mode = os.environ.get('APP_MODE')
+    # Remember to set environment variable APP_MODE=DEV on the command line
+    print('endpoint_url:', entity.endpoint_url, ' profile_name:', entity.profile_name)
+    if mode == 'DEV':
+        assert entity.endpoint_url == 'http://localhost:8000'
+        assert entity.profile_name == 'fake'
+    elif mode == 'PROD':
+        assert entity.profile_name is None
+    
