@@ -1,8 +1,16 @@
 import os, toml
 
 mode = os.environ.get('APP_MODE')
-with open('app.toml') as f:
-    config = toml.load(f)
+try:
+    # First look for app.toml in the application root
+    with open('app.toml') as f:
+        config = toml.load(f)
+except:
+    # Then look in the same directory as the current script
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    with open(f'{script_dir}/app.toml') as f:
+        config = toml.load(f)
+
 try:
     endpoint_url = config[mode]['endpoint_url']
 except:
