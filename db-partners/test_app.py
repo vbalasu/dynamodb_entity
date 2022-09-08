@@ -27,6 +27,10 @@ def test_list():
     response = requests.get(f'{url}/list/db_partners_items')
     assert response.status_code == 200
 
+def test_query():
+    response = requests.post(f'{url}/query', data="SELECT * FROM db_partners_items WHERE id='second'")
+    assert response.status_code == 200
+
 def test_delete():
     response = requests.get(f'{url}/delete/second/db_partners_items')
     assert response.status_code == 200
