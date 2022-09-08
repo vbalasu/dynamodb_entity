@@ -1,0 +1,14 @@
+{
+  "version": "2.0",
+  "app_name": "db-partners",
+  "manage_iam_role": false,
+  "iam_role_arn": "arn:aws:iam::997819012307:role/databricks-partner-management",
+  "environment_variables": {
+    "MODE": "PRODUCTION"
+  },
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api"
+    }
+  }
+}

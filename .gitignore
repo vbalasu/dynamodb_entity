@@ -7,3 +7,10 @@ THIRD-PARTY-LICENSES.txt
 dynamodb_local_latest.zip
 shared-local-instance.db
 __pycache__/
+dist/
+dynamodb_entity.egg-info/
+db-partners/__pycache__/
+db-partners/chalicelib/__pycache__/
+db-partners/.chalice/deployed/
+db-partners/.chalice/deployments/
+
